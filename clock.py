@@ -1,6 +1,9 @@
 from Tkinter import *
 import time
 import random
+import sys
+def quit_program():
+    sys.exit() 
 root = Tk()
 root.geometry('800x480')
 time1 = ''
@@ -12,7 +15,8 @@ baro_display = Label(root, font=('arial', 42, 'bold'), bg='white', fg="blue")
 temp_display.pack(side= LEFT)
 humidity_display.pack(side = RIGHT)
 baro_display.pack(side = LEFT)
-
+quitButton = Button(text="Quit", command=quit_program)
+quitButton.pack(side = LEFT)
 def tick():
     global time1
     # get the current local time from the PC
