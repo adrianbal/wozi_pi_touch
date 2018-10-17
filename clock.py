@@ -5,18 +5,20 @@ import sys
 def quit_program():
     sys.exit() 
 root = Tk()
+root.attributes('-fullscreen', True)
 root.geometry('800x480')
+root.configure(background='black')
 time1 = ''
 clock = Label(root, font=('arial', 60, 'bold'), bg='black', fg="blue")
-clock.pack(fill=BOTH)
-temp_display = Label(root, font=('arial', 42, 'bold'), bg='white', fg="blue")
-humidity_display = Label(root, font=('arial', 42, 'bold'), bg='white', fg="blue")
-baro_display = Label(root, font=('arial', 42, 'bold'), bg='white', fg="blue")
-temp_display.pack(side= LEFT)
-humidity_display.pack(side = RIGHT)
-baro_display.pack(side = LEFT)
+clock.pack(side=TOP, fill=BOTH)
+temp_display = Label(root, font=('arial', 42, 'bold'), bg='black', fg="blue")
+humidity_display = Label(root, font=('arial', 42, 'bold'), bg='black', fg="blue")
+baro_display = Label(root, font=('arial', 42, 'bold'), bg='black', fg="blue")
+temp_display.pack(side= TOP, fill=BOTH)
+humidity_display.pack(side = TOP, fill=BOTH)
+baro_display.pack(side = TOP, fill=BOTH)
 quitButton = Button(text="Quit", command=quit_program)
-quitButton.pack(side = LEFT)
+quitButton.pack(side = BOTTOM)
 def tick():
     global time1
     # get the current local time from the PC
